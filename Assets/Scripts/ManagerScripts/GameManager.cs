@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
     }
     private void SetMeter()
     {
-        _meter += PlayerController.instance._playerContrrollerSettings._getMoveSpeed*Time.fixedDeltaTime;
-        UIScript.instance._meterText.text = _meter + "m";
+        _meter += PlayerController.instance._playerContrrollerSettings._getMoveSpeed*UILauncPower.instance._getLaunchPower*Time.deltaTime;
+        UIScript.instance._meterText.text = (int)_meter + "m";
     }
 }
